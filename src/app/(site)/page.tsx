@@ -4,10 +4,10 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const Main = async () => {
-  const chat = await v0.chats.create({
-    message: "Create a responsive navbar with Tailwind CSS",
-  });
-  const code = chat.files?.map((file) => file.source).join("\n\n") || "";
+  // const chat = await v0.chats.create({
+  //   message: "Create a responsive navbar with Tailwind CSS",
+  // });
+  // const code = chat.files?.map((file) => file.source).join("\n\n") || "";
 
   return (
     <div className="w-full bg-black/90 p-2">
@@ -20,11 +20,11 @@ const Main = async () => {
       >
         Generate Code
       </button> */}
-      <div className="w-full mx-auto text-sm max-w-2xl rounded mb-2">
+      {/* <div className="w-full mx-auto text-sm max-w-2xl rounded mb-2">
         <SyntaxHighlighter language="tsx" style={oneDark} wrapLongLines={true}>
           {code}
         </SyntaxHighlighter>
-      </div>
+      </div> */}
     </div>
   );
 };
