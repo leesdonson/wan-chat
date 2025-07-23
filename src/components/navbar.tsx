@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 export const Navbar = () => {
   return (
-    <header className="flex items-center justify-between p-5">
+    <header className="flex fixed top-0 left-0 right-0 items-center justify-between p-5">
       <div className="">
         <Link className="lg:text-lg font-bold" href="/">
           Wan Chat

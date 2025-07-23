@@ -1,7 +1,12 @@
+import { Chat } from "@/components/chat";
 import React from "react";
 
 const ChatPage = () => {
-  return <div>ChatPage</div>;
+  return (
+    <div>
+      <Chat />
+    </div>
+  );
 };
 
 export default ChatPage;

@@ -1,36 +1,29 @@
 "use client";
 
-import React, { useState } from "react";
-import { v0 } from "v0-sdk";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import React from "react";
+import { SendHorizontal } from "lucide-react";
 
 export const Chat = () => {
-  const [src, setSrc] = useState<string>("");
-
-  const handleGenerate = async () => {
-    const chat = await v0.chats.create({
-      message: "Create a responsive navbar with Tailwind CSS",
-    });
-    const code = chat.files?.map((file) => file.source).join("\n\n") || "";
-    setSrc(code);
+  const user = {
+    name: "John Doe",
+    email: "admin@wanchat.com",
   };
 
   return (
-    <div className="w-full p-2">
-      <h1 className="text-3xl font-bold mb-5 text-center">
-        Hello, Wan Chat, Powered by v0
+    <div className="w-full min-h-screen flex flex-col items-center justify-center p-2">
+      <h1 className="md:text-5xl text-xl font-bold bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 text-transparent bg-clip-text mb-3">
+        Welcome back {user.name.split(" ")[0]}.
       </h1>
-      <button
-        onClick={handleGenerate}
-        className="mb-4 px-4 py-2 bg-blue-600 text-white rounded"
-      >
-        Generate Code
-      </button>
-      <div className="w-full mx-auto text-sm border max-w-2xl bg-gray-100 rounded p-4 mb-2">
-        <SyntaxHighlighter language="tsx" style={oneDark} wrapLongLines>
-          {src}
-        </SyntaxHighlighter>
+      <p>Describe what you want to build and we will help you build it.</p>
+      <div className="w-full max-w-3xl mx-auto relative flex flex-col p-5 items-center justify-center border border-gray-500 rounded-md mt-3">
+        <div
+          className="w-full overflow-hidden bg-transparent resize-none outline-none"
+          contentEditable
+          id="chat"
+        ></div>
+        <div className="absolute right-2 bottom-2">
+          <SendHorizontal className="w-4 h-4" />
+        </div>
       </div>
     </div>
   );

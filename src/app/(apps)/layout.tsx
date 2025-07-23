@@ -31,8 +31,11 @@ export default function AppsLayout({
       >
         <SidebarProvider>
           <AppSidebar />
-          <main className="px-2">
-            <SidebarTrigger />
+          <main className="relative w-full overflow-hidden">
+            <div className="absolute border-b border-slate-400 w-full">
+              <SidebarTrigger />
+            </div>
+
             {children}
           </main>
         </SidebarProvider>

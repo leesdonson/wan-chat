@@ -2,6 +2,8 @@ import React from "react";
 import { v0 } from "v0-sdk";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const Main = async () => {
   // const chat = await v0.chats.create({
@@ -10,21 +12,25 @@ const Main = async () => {
   // const code = chat.files?.map((file) => file.source).join("\n\n") || "";
 
   return (
-    <div className="w-full bg-black/90 p-2">
-      <h1 className="text-3xl text-slate-300 font-bold mb-5 text-center">
-        Hello, Wan Chat, Powered by v0
+    <div className="w-full flex flex-col items-center justify-center min-h-screen">
+      <h1 className="md:text-5xl text-2xl p-3 font-bold bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 text-transparent bg-clip-text">
+        Build your web apps in minutes.
       </h1>
-      {/* <button
-        onClick={handleGenerate}
-        className="mb-4 px-4 py-2 bg-blue-600 text-white rounded"
-      >
-        Generate Code
-      </button> */}
-      {/* <div className="w-full mx-auto text-sm max-w-2xl rounded mb-2">
-        <SyntaxHighlighter language="tsx" style={oneDark} wrapLongLines={true}>
-          {code}
-        </SyntaxHighlighter>
-      </div> */}
+      <p className="p-3 mb-5">
+        We offer a platform that allows you to build your web apps in minutes.
+      </p>
+      <div className="w-full max-w-xl mx-auto flex justify-center items-center gap-5 p-2 mb-5">
+        <Link className="w-full" href="/chat">
+          <button className="rounded cursor-pointer w-full bg-blue-800 p-2">
+            Try it now.
+          </button>
+        </Link>
+        <Link className="w-full" href="/docs">
+          <button className="rounded w-full cursor-pointer bg-blue-800 p-2">
+            Learn more.
+          </button>
+        </Link>
+      </div>
     </div>
   );
 };

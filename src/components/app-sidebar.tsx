@@ -1,11 +1,4 @@
-import {
-  Calendar,
-  Home,
-  Inbox,
-  Search,
-  Settings,
-  MessageSquareMore,
-} from "lucide-react";
+import { MessageSquareMore } from "lucide-react";
 
 import {
   Sidebar,
@@ -20,31 +13,31 @@ import {
 import { UserNav } from "./user-nav";
 
 // Menu items.
-const items = [
+const recentChats = [
   {
-    title: "Home",
-    url: "#",
-    icon: Home,
+    title: "Responsive Navbar with Tailwind CSS",
+    slug: "responsive-navbar-with-tailwind-css",
+    id: 1,
   },
   {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
+    title: "Create beautiful landing pages with Tailwind CSS",
+    slug: "create-beautiful-landing-pages-with-tailwind-css",
+    id: 2,
   },
   {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
+    title: "Design system for Tailwind CSS",
+    slug: "design-system-for-tailwind-css",
+    id: 3,
   },
   {
-    title: "Search",
-    url: "#",
-    icon: Search,
+    title: "How to use Tailwind CSS with Next.js",
+    slug: "how-to-use-tailwind-css-with-nextjs",
+    id: 4,
   },
   {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
+    title: "Learn Tailwind CSS by building a website",
+    slug: "learn-tailwind-css-by-building-a-website",
+    id: 5,
   },
 ];
 
@@ -59,12 +52,11 @@ export function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+              {recentChats.map((chat) => (
+                <SidebarMenuItem key={chat.title}>
                   <SidebarMenuButton asChild className="rounded">
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
+                    <a href={chat.slug}>
+                      <span>{chat.title.slice(0, 25).concat("...")}</span>
                     </a>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
