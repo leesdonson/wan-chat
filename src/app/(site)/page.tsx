@@ -1,16 +1,8 @@
 import React from "react";
-import { v0 } from "v0-sdk";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { Button } from "@/components/ui/button";
+
 import Link from "next/link";
 
 const Main = async () => {
-  // const chat = await v0.chats.create({
-  //   message: "Create a responsive navbar with Tailwind CSS",
-  // });
-  // const code = chat.files?.map((file) => file.source).join("\n\n") || "";
-
   return (
     <div className="w-full flex flex-col items-center justify-center min-h-screen">
       <h1 className="md:text-5xl text-2xl p-3 font-bold bg-gradient-to-r from-blue-500 via-red-500 to-yellow-500 text-transparent bg-clip-text">

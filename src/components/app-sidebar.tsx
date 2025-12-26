@@ -48,7 +48,7 @@ export function AppSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel className="text-foreground flex items-center justify-start">
             <MessageSquareMore className="mr-2" />
-            Chats
+            Recent Chats
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
