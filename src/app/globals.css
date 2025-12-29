@@ -121,6 +121,13 @@ html {
   scrollbar-width: none;
 }
 
+@layer components {
+  .shadow-custom {
+    box-shadow: rgba(248, 4, 4, 0.12) 0px 2px 4px 0px,
+      rgba(243, 154, 21, 0.32) 0px 2px 16px 0px;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

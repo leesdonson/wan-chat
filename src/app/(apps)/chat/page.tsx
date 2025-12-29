@@ -1,9 +1,9 @@
 import { Chat } from "@/components/chat";
-import React from "react";
+import { ChatResponse } from "@/components/chat-response";
 
-const ChatPage = () => {
+const ChatPage = async () => {
   return (
-    <div>
+    <div className="w-full h-full flex items-center justify-center">
       <Chat />
     </div>
   );
