@@ -1,11 +1,15 @@
 "use client";
 
-import { getPrompt } from "@/api";
+import { useChat } from "@/context";
+// import { getPrompt } from "@/api";
 import React, { useState, useRef, useEffect } from "react";
 
-export function ChatInput() {
+export function ChatInput({ onSend }: { onSend: () => void }) {
   const [prompt, setPrompt] = useState("");
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const addChat = useChat((state) => state.addChat);
+  const setContent = useChat((state) => state.setContent);
 
   // Auto-resize logic for the textarea
   useEffect(() => {
@@ -16,8 +20,10 @@ export function ChatInput() {
   }, [prompt]);
 
   const handleSubmit = async () => {
-    const response = await getPrompt(prompt);
+    // const response = await getPrompt(prompt);
     // store the response in the state management, get the response from the state and pass it to the ChatResponse component
+    addChat(prompt);
+    setContent(true);
   };
 
   const handleFormEvent = (e: React.FormEvent) => {

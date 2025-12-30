@@ -1,12 +1,14 @@
-import { Chat } from "@/components/chat";
-import { ChatResponse } from "@/components/chat-response";
+"use client";
 
-const ChatPage = async () => {
+import { Chat } from "@/components/chat";
+import { useChat } from "@/context";
+
+export default function ChatPage() {
+  const { chat, content } = useChat((state) => state);
+
   return (
-    <div className="w-full h-full flex items-center justify-center">
-      <Chat />
+    <div className="w-full border border-red-700 h-full">
+      <Chat chatt={chat} content={content} />
     </div>
   );
-};
-
-export default ChatPage;
+}
