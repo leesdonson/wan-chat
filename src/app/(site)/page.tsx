@@ -11,7 +11,7 @@ const Main = async () => {
       </p>
       <div className="w-full max-w-xl mx-auto flex justify-center items-center gap-5 p-2 mb-5">
         <Link className="w-full" href="/chat">
-          <button className="rounded cursor-pointer w-full bg-blue-800 p-2">
+          <button className="rounded cursor-pointer w-full bg-linear-to-r from-blue-700 via-red-500 to-yellow-500 p-2">
             Try it now.
           </button>
         </Link>
